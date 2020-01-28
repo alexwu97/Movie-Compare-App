@@ -6,7 +6,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieInfo: null,
+      displayOne: { no: '1', class: '.1', selection: true },
+      displayTwo: { no: '2', class: '.2', selection: false },
+      movieInfoOne: null,
+      movieInfoTwo: null,
       toggle: 'off'
     };
   }
@@ -17,25 +20,44 @@ class App extends React.Component {
     )
       .then(res => res.json())
       .then(data => {
-        this.setState({ movieInfo: data });
+        this.setState(() => {
+          if (this.state.displayOne.selection) {
+            return { movieInfoOne: data };
+          } else {
+            return { movieInfoTwo: data };
+          }
+        });
       });
+  };
+
+  onSelected = displayer => {
+    if ((displayer.no === '1') & (displayer.selection === false)) {
+      console.log(displayer);
+      this.setState({
+        displayOne: { no: '1', class: '.1', selection: true },
+        displayTwo: { no: '2', class: '.2', selection: false }
+      });
+    } else if ((displayer.no === '2') & (displayer.selection === false)) {
+      console.log(displayer);
+      this.setState({
+        displayOne: { no: '1', class: '.1', selection: false },
+        displayTwo: { no: '2', class: '.2', selection: true }
+      });
+    }
   };
 
   tempFunc = () => {
     if ($('input[name=checkbox]').is(':checked')) {
       this.toggleChange('off');
+      this.setState({ movieInfoTwo: null });
     } else {
       this.toggleChange('on');
-      console.log(this.state.toggle);
     }
   };
 
   toggleChange = status => {
     this.setState({ toggle: status });
-    console.log(this.state.toggle);
   };
-
-
 
   componentDidMount() {
     // init Bloodhound
@@ -117,8 +139,12 @@ class App extends React.Component {
       <section>
         <Search onToggled={this.tempFunc} />
         <ScreenDisplay
-          info={this.state.movieInfo}
+          infoOne={this.state.movieInfoOne}
+          infoTwo={this.state.movieInfoTwo}
           toggle={this.state.toggle}
+          onSelected={this.onSelected}
+          displayOne={this.state.displayOne}
+          displayTwo={this.state.displayTwo}
         />
       </section>
     );

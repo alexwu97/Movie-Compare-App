@@ -4,57 +4,42 @@ import Display from './Display';
 class ScreenDisplay extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      displayOne: { no: '1', selection: true },
-      displayTwo: { no: '2', selection: false }
-    };
+    this.state = {};
   }
 
   static getDerivedStateFromProps(props, state) {
     return {
-      movieInfo: props.info,
+      movieInfoOne: props.infoOne,
+      movieInfoTwo: props.infoTwo,
       toggle: props.toggle
     };
   }
-
-  onSelected = displayer => {
-    if ((displayer.no === '1') & (displayer.selection === false)) {
-      console.log(displayer);
-      this.setState({
-        displayOne: { no: '1', selection: true },
-        displayTwo: { no: '2', selection: false }
-      });
-    } else if ((displayer.no === '2') & (displayer.selection === false)) {
-      console.log(displayer);
-      this.setState({
-        displayOne: { no: '1', selection: false },
-        displayTwo: { no: '2', selection: true }
-      });
-    }
-  };
 
   render() {
     if (this.state.toggle === 'on') {
       return (
         <div>
           <Display
-            information={this.state.movieInfo}
-            onSelected={this.onSelected}
-            display={this.state.displayOne}
+            information={this.state.movieInfoOne}
+            onSelected={this.props.onSelected}
+            display={this.props.displayOne}
+            toggle={this.state.toggle}
           />
           <Display
-            information={this.state.movieInfo}
-            onSelected={this.onSelected}
-            display={this.state.displayTwo}
+            information={this.state.movieInfoTwo}
+            onSelected={this.props.onSelected}
+            display={this.props.displayTwo}
+            toggle={this.state.toggle}
           />
         </div>
       );
     } else {
       return (
         <Display
-          information={this.state.movieInfo}
-          onSelected={this.onSelected}
-          display={this.state.displayOne}
+          information={this.state.movieInfoOne}
+          onSelected={this.props.onSelected}
+          display={this.props.displayOne}
+          toggle={this.state.toggle}
         />
       );
     }

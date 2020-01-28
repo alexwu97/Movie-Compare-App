@@ -1,3 +1,9 @@
 .border-bottom-dashed {
-    border-bottom-style: dashed;
+  border-bottom-style: dashed;
+}
+
+.border-coloring {
+  border-color: yellow;
+  border-width: 5px;
+  border-style: solid;
 }

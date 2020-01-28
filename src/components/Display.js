@@ -6,21 +6,20 @@ class Display extends React.Component {
     this.state = { information: null };
   }
 
-  shouldComponentUpdate() {
-    if (!this.props.display.selection) {
-      return false;
-    } else {
-      return this.props.display.selection;
-    }
-  }
-
   static getDerivedStateFromProps(props, state) {
     return {
       information: props.information
     };
   }
 
-  componentWillMount() {
+  highlight = () => {
+    if (this.props.display.selection) {
+      $(this.props.display.class).removeClass('border');
+      $(this.props.display.class).addClass('border-coloring');
+    }
+  };
+
+  componentDidMount() {
     this.setState = { information: null };
   }
 
@@ -36,7 +35,7 @@ class Display extends React.Component {
     if (!movie) {
       return (
         <div
-          className="flex border relative max-width-4 mx-auto"
+          className="flex border relative max-width-4 mx-auto includer"
           onClick={() => {
             this.props.onSelected(this.props.display);
           }}
@@ -53,7 +52,7 @@ class Display extends React.Component {
 
     return (
       <div
-        className="flex border relative max-width-4 mx-auto"
+        className="flex border relative max-width-4 mx-auto includer"
         onClick={() => {
           this.props.onSelected(this.props.display);
         }}
