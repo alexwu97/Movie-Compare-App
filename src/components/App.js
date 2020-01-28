@@ -30,6 +30,13 @@ class App extends React.Component {
       });
   };
 
+  onRemount = () => {
+    this.setState({
+      displayOne: { no: '1', class: '.1', selection: true },
+      displayTwo: { no: '2', class: '.2', selection: false }
+    });
+  };
+
   onSelected = displayer => {
     if ((displayer.no === '1') & (displayer.selection === false)) {
       console.log(displayer);
@@ -145,6 +152,7 @@ class App extends React.Component {
           onSelected={this.onSelected}
           displayOne={this.state.displayOne}
           displayTwo={this.state.displayTwo}
+          onRemount={this.onRemount}
         />
       </section>
     );

@@ -4,6 +4,11 @@ class Display extends React.Component {
   constructor(props) {
     super(props);
     this.state = { information: null };
+
+    if (this.props.display.no === '2') {
+      console.log('hello');
+      this.props.onRemount();
+    }
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -11,13 +16,6 @@ class Display extends React.Component {
       information: props.information
     };
   }
-
-  highlight = () => {
-    if (this.props.display.selection) {
-      $(this.props.display.class).removeClass('border');
-      $(this.props.display.class).addClass('border-coloring');
-    }
-  };
 
   componentDidMount() {
     this.setState = { information: null };
@@ -35,7 +33,6 @@ class Display extends React.Component {
     if (!movie) {
       return (
         <div
-          className="flex border relative max-width-4 mx-auto includer"
           onClick={() => {
             this.props.onSelected(this.props.display);
           }}
@@ -52,7 +49,7 @@ class Display extends React.Component {
 
     return (
       <div
-        className="flex border relative max-width-4 mx-auto includer"
+        className="flex"
         onClick={() => {
           this.props.onSelected(this.props.display);
         }}
