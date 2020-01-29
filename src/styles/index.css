@@ -6,11 +6,14 @@
 @import './shame';
 @import './typeahead';
 @import './toggleSwitch';
+@import './spacing';
 
 :root {
   --h2: 50px;
   --h1: 70px;
+  --h3: 30px;
   --black: #222;
+  --dark-gray: #18181e;
 }
 
 * {
@@ -19,7 +22,7 @@
 }
 
 body {
-  background-color: var(--gray);
+  background-color: var(--dark-gray);
 }
 
 h1,
@@ -32,16 +35,17 @@ h6 {
   font-family: 'Oswald', sans-serif;
 }
 
-.width3 {
-  width: 40%;
-}
-
 .hovering:hover {
   cursor: pointer;
   -webkit-box-shadow: 5px 1px 7px 7px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 5px 1px 7px 7px rgba(50, 50, 50, 0.75);
   box-shadow: 5px 1px 7px 7px rgba(50, 50, 50, 0.75);
-  -webkit-transform: translate(10px, 10px);
+  -webkit-transform: translate(15px, 15px);
   transform: translate(15px, 15px);
   transition: transform 0.75s, box-shadow 0.75s, ease;
+}
+
+.shift {
+  -webkit-transform: translate(15px, 15px);
+  transform: translate(15px, 15px);
 }

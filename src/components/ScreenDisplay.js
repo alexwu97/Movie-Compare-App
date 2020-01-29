@@ -16,10 +16,10 @@ class ScreenDisplay extends React.Component {
   }
 
   highlight = (selected, deselect) => {
-    $(selected).removeClass('border hovering');
-    $(selected).addClass('border-coloring');
-    $(deselect).addClass('border hovering');
-    $(deselect).removeClass('border-coloring');
+    $(selected).removeClass('hovering');
+    $(selected).addClass('border-coloring shift');
+    $(deselect).addClass('hovering');
+    $(deselect).removeClass('border-coloring shift');
   };
 
   render() {
@@ -27,7 +27,7 @@ class ScreenDisplay extends React.Component {
       return (
         <div className="flex">
           <div
-            className="border relative width3 mx-auto 1 border-coloring"
+            className="py0 relative width40 mx-auto 1 border-coloring text-color-white"
             onClick={() => {
               this.highlight(
                 this.props.displayOne.class,
@@ -43,7 +43,7 @@ class ScreenDisplay extends React.Component {
             />
           </div>
           <div
-            className="border relative width3 mx-auto 2 hovering"
+            className="py0 relative width40 mx-auto 2 hovering text-color-white"
             onClick={() => {
               this.highlight(
                 this.props.displayTwo.class,
@@ -63,7 +63,7 @@ class ScreenDisplay extends React.Component {
       );
     } else {
       return (
-        <div className="flex border relative max-width-4 mx-auto">
+        <div className="py0 relative width50 mx-auto text-color-white">
           <Display
             information={this.state.movieInfoOne}
             onSelected={this.props.onSelected}
