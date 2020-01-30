@@ -27,7 +27,7 @@ class ScreenDisplay extends React.Component {
       return (
         <div className="flex">
           <div
-            className="py0 relative width40 mx-auto 1 border-coloring text-color-white"
+            className="py0 relative width45 mx-auto 1 border-coloring text-color-white"
             onClick={() => {
               this.highlight(
                 this.props.displayOne.class,
@@ -43,7 +43,7 @@ class ScreenDisplay extends React.Component {
             />
           </div>
           <div
-            className="py0 relative width40 mx-auto 2 hovering text-color-white"
+            className="py0 relative width45 mx-auto 2 hovering text-color-white"
             onClick={() => {
               this.highlight(
                 this.props.displayTwo.class,

@@ -1,6 +1,13 @@
 import React from 'react';
 
-const Search = ({ onToggled }) => {
+const Search = ({ onToggled, toggle }) => {
+  if (toggle === 'on') {
+    console.log(toggle);
+    $('.abcde').addClass('shadow');
+  } else {
+    console.log(toggle);
+    $('.abcde').removeClass('shadow');
+  }
   return (
     <div className="flex">
       <div className="mt1 mb4 ml40 mr4" style={{ width: 400 }}>
@@ -15,7 +22,7 @@ const Search = ({ onToggled }) => {
         />
       </div>
       <div>
-        <div className="mt2">compare two movies</div>
+        <div className="mt2 abcde text-color-white">compare two movies</div>
         <label className="switch mt1">
           <input type="checkbox" name="checkbox"></input>
           <span

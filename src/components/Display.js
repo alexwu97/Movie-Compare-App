@@ -28,12 +28,12 @@ class Display extends React.Component {
     if (!movie) {
       return (
         <div
-          className="color-blue h100"
+          className="color-blue h100 mx-auto"
           onClick={() => {
             this.props.onSelected(this.props.display);
           }}
         >
-          <div className="" style={{ height: 750 }}>
+          <div className="aligner" style={{ height: 750 }}>
             Look up a movie
           </div>
         </div>
@@ -41,8 +41,13 @@ class Display extends React.Component {
     }
 
     let revenue = 'N/A';
+    let budget = 'N/A';
     if ((movie.revenue != undefined) & (movie.revenue != 0)) {
       revenue = formatter.format(movie.revenue);
+    }
+
+    if ((movie.budget != undefined) & (movie.budget != 0)) {
+      budget = formatter.format(movie.budget);
     }
 
     return (
@@ -53,34 +58,48 @@ class Display extends React.Component {
         }}
       >
         <div>
-          <img className="h100" src={PIC_URL + movie.poster_path} alt=""></img>
+          <img
+            className="h100 width500"
+            src={PIC_URL + movie.poster_path}
+            alt=""
+          ></img>
         </div>
 
-        <div className="px20">
+        <div className="px20 width100">
           <h2 className="h2 text-color-main">{movie.original_title}</h2>
           <p>{movie.overview}</p>
 
           <div>
-            <h3 className="h3 text-color-main">Genre: </h3>
+            <h3 className="h3 text-color-main inline">Genre: </h3>
             {movie.genres.map(obj => (
               <span key={obj.id}>{obj.name} </span>
             ))}
           </div>
           <div>
-            <span>release date: </span>
+            <h3 className="h3 text-color-main">Release Date: </h3>
             <span>{movie.release_date}</span>
           </div>
           <div>
-            <span>run time: </span>
+            <h3 className="h3 text-color-main">Run Time: </h3>
             <span>{movie.runtime} min</span>
           </div>
           <div>
-            <span>score: </span>
+            <h3 className="h3 text-color-main">Score: </h3>
             <span>{movie.vote_average}/10</span>
           </div>
           <div>
-            <span>box office: </span>
+            <h3 className="h3 text-color-main">Box Office: </h3>
             <span>{revenue}</span>
+          </div>
+          <div>
+            <h3 className="h3 text-color-main">Movie Budget: </h3>
+            <span>{budget}</span>
+          </div>
+          <div className="py-auto"></div>
+          <div className="bottom">
+            <a className="text-color-white" href={movie.homepage}>
+              {movie.homepage}
+            </a>
           </div>
         </div>
       </div>
@@ -89,7 +108,6 @@ class Display extends React.Component {
 
   componentWillUnmount() {
     if (this.props.display.no === '2') {
-      console.log('hello');
       this.props.onRemount();
     }
   }

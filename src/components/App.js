@@ -144,7 +144,7 @@ class App extends React.Component {
   render() {
     return (
       <section>
-        <Search onToggled={this.tempFunc} />
+        <Search onToggled={this.tempFunc} toggle={this.state.toggle} />
         <ScreenDisplay
           infoOne={this.state.movieInfoOne}
           infoTwo={this.state.movieInfoTwo}

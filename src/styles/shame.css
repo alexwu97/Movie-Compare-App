@@ -13,3 +13,7 @@
 .text-color-main {
   color: #deb992;
 }
+
+.shadow {
+  text-shadow: 0 0 20px white;
+}

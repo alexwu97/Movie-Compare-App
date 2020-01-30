@@ -49,3 +49,7 @@ h6 {
   -webkit-transform: translate(15px, 15px);
   transform: translate(15px, 15px);
 }
+
+span {
+  font-size: 20px;
+}
