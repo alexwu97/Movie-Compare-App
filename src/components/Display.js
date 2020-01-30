@@ -33,7 +33,7 @@ class Display extends React.Component {
             this.props.onSelected(this.props.display);
           }}
         >
-          <div className="aligner" style={{ height: 750 }}>
+          <div className="aligner" style={{ height: 600 }}>
             Look up a movie
           </div>
         </div>
@@ -59,7 +59,7 @@ class Display extends React.Component {
       >
         <div>
           <img
-            className="h100 width500"
+            className="h100 width400"
             src={PIC_URL + movie.poster_path}
             alt=""
           ></img>
