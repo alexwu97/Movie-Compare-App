@@ -65,7 +65,7 @@ class Display extends React.Component {
         </div>
 
         <div className="px20 width100">
-          <h2 className="h2 text-color-main mb0">{movie.original_title}</h2>
+          <h2 className="h2 text-color-main mb0">{movie.title}</h2>
           <p className="mb2">{movie.overview}</p>
 
           <div>
@@ -78,27 +78,27 @@ class Display extends React.Component {
           </div>
           <div className="flex">
             <div className="width50">
-              <h3 className="h3 text-color-main">Release Date: </h3>
+              <h3 className="h3 text-color-main mb0">Release Date: </h3>
               <span>{movie.release_date}</span>
             </div>
             <div className="width50">
-              <h3 className="h3 text-color-main">Score: </h3>
+              <h3 className="h3 text-color-main mb0">Score: </h3>
               <span>{movie.vote_average}/10</span>
             </div>
           </div>
           <div className="flex">
             <div className="width50">
-              <h3 className="h3 text-color-main">Box Office: </h3>
+              <h3 className="h3 text-color-main mb0">Box Office: </h3>
               <span>{revenue}</span>
             </div>
             <div className="width50">
-              <h3 className="h3 text-color-main">Movie Budget: </h3>
+              <h3 className="h3 text-color-main mb0">Movie Budget: </h3>
               <span>{budget}</span>
             </div>
           </div>
 
           <div>
-            <h3 className="h3 text-color-main">Run Time: </h3>
+            <h3 className="h3 text-color-main mb0">Run Time: </h3>
             <span>{movie.runtime} min</span>
           </div>
           <div className="bottom">

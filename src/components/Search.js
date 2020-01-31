@@ -18,11 +18,13 @@ const Search = ({ onToggled, toggle }) => {
           id="movieSearch"
           name="search"
           placeholder="Search"
-          autoComplete="on"
+          autoComplete="off"
         />
       </div>
-      <div>
-        <div className="mt2 compare text-color-blue">Compare Two Movies</div>
+      <div className="flex mt1">
+        <div className="mt2 mx2 compare text-color-blue">
+          Compare Two Movies
+        </div>
         <label className="switch mt1">
           <input type="checkbox" name="checkbox"></input>
           <span
