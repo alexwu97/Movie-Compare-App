@@ -7,7 +7,8 @@
 @import './typeahead';
 @import './toggleSwitch';
 @import './spacing';
-@import '../static/images/Movie_Background.jpeg': root {
+
+:root {
   --h2: 50px;
   --h1: 70px;
   --h3: 25px;
