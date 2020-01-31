@@ -22,14 +22,14 @@
 }
 
 body {
-  background: url(/src/static/images/Movie_Background.jpeg) no-repeat center
-    center fixed;
+  background: url('https://download.hipwallpaper.com/desktop/1920/1080/80/29/ynuKj1.jpeg')
+    no-repeat center center fixed;
   background-size: cover;
 }
 
 #outer-container {
   background-image: linear-gradient(
-    rgba(0, 0, 0, 0.85) 30%,
+    rgba(0, 0, 0, 0.85) 10%,
     rgba(0, 0, 0, 0.2) 40%,
     rgba(0, 0, 0, 1) 90%
   );
