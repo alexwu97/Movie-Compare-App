@@ -28,14 +28,13 @@ class Display extends React.Component {
     if (!movie) {
       return (
         <div
-          className="color-blue h100 mx-auto"
+          className="color-blue mx-auto"
+          style={{ height: 600 }}
           onClick={() => {
             this.props.onSelected(this.props.display);
           }}
         >
-          <div className="aligner" style={{ height: 600 }}>
-            Look up a movie
-          </div>
+          <div className="aligner py4 text-color-blue">Search a Movie!</div>
         </div>
       );
     }
@@ -57,7 +56,7 @@ class Display extends React.Component {
           this.props.onSelected(this.props.display);
         }}
       >
-        <div>
+        <div className="inline-block">
           <img
             className="h100 width400"
             src={PIC_URL + movie.poster_path}
@@ -66,36 +65,42 @@ class Display extends React.Component {
         </div>
 
         <div className="px20 width100">
-          <h2 className="h2 text-color-main">{movie.original_title}</h2>
-          <p>{movie.overview}</p>
+          <h2 className="h2 text-color-main mb0">{movie.original_title}</h2>
+          <p className="mb2">{movie.overview}</p>
 
           <div>
             <h3 className="h3 text-color-main inline">Genre: </h3>
             {movie.genres.map(obj => (
-              <span key={obj.id}>{obj.name} </span>
+              <span className="text-color-blue pl1" key={obj.id}>
+                {obj.name}
+              </span>
             ))}
           </div>
-          <div>
-            <h3 className="h3 text-color-main">Release Date: </h3>
-            <span>{movie.release_date}</span>
+          <div className="flex">
+            <div className="width50">
+              <h3 className="h3 text-color-main">Release Date: </h3>
+              <span>{movie.release_date}</span>
+            </div>
+            <div className="width50">
+              <h3 className="h3 text-color-main">Score: </h3>
+              <span>{movie.vote_average}/10</span>
+            </div>
           </div>
+          <div className="flex">
+            <div className="width50">
+              <h3 className="h3 text-color-main">Box Office: </h3>
+              <span>{revenue}</span>
+            </div>
+            <div className="width50">
+              <h3 className="h3 text-color-main">Movie Budget: </h3>
+              <span>{budget}</span>
+            </div>
+          </div>
+
           <div>
             <h3 className="h3 text-color-main">Run Time: </h3>
             <span>{movie.runtime} min</span>
           </div>
-          <div>
-            <h3 className="h3 text-color-main">Score: </h3>
-            <span>{movie.vote_average}/10</span>
-          </div>
-          <div>
-            <h3 className="h3 text-color-main">Box Office: </h3>
-            <span>{revenue}</span>
-          </div>
-          <div>
-            <h3 className="h3 text-color-main">Movie Budget: </h3>
-            <span>{budget}</span>
-          </div>
-          <div className="py-auto"></div>
           <div className="bottom">
             <a className="text-color-white" href={movie.homepage}>
               {movie.homepage}

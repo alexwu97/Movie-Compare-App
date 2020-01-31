@@ -75,7 +75,8 @@ class App extends React.Component {
         url:
           'https://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=97c6d094b395cb9fa70c2328184d5e4f',
         wildcard: '%QUERY', // %QUERY will be replace by users input in
-        transform: function(movies) {
+
+        filter: function(movies) {
           // Map the remote source JSON array to a JavaScript object array
           return $.map(movies.results, function(movie) {
             return {

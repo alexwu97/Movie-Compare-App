@@ -3,10 +3,10 @@ import React from 'react';
 const Search = ({ onToggled, toggle }) => {
   if (toggle === 'on') {
     console.log(toggle);
-    $('.abcde').addClass('shadow');
+    $('.compare').addClass('shadow');
   } else {
     console.log(toggle);
-    $('.abcde').removeClass('shadow');
+    $('.compare').removeClass('shadow');
   }
   return (
     <div className="flex">
@@ -22,7 +22,7 @@ const Search = ({ onToggled, toggle }) => {
         />
       </div>
       <div>
-        <div className="mt2 abcde text-color-white">compare two movies</div>
+        <div className="mt2 compare text-color-blue">Compare Two Movies</div>
         <label className="switch mt1">
           <input type="checkbox" name="checkbox"></input>
           <span

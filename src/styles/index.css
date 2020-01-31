@@ -7,8 +7,7 @@
 @import './typeahead';
 @import './toggleSwitch';
 @import './spacing';
-
-:root {
+@import '/src/static/images/Movie_Background.jpeg': root {
   --h2: 50px;
   --h1: 70px;
   --h3: 25px;
@@ -22,7 +21,20 @@
 }
 
 body {
-  background-color: var(--dark-gray);
+  background: url('/src/static/images/Movie_Background.jpeg') no-repeat center
+    center fixed;
+  background-size: cover;
+}
+
+#outer-container {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.85) 30%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 1) 90%
+  );
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh;
 }
 
 h1,
@@ -52,4 +64,8 @@ h6 {
 
 div {
   font-size: 15px;
+}
+
+span {
+  font-size: 1.2em;
 }
