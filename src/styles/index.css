@@ -22,8 +22,8 @@
 }
 
 body {
-  background: url('https://download.hipwallpaper.com/desktop/1920/1080/80/29/ynuKj1.jpeg')
-    no-repeat center center fixed;
+  background: url('/src/static/images/background.jpeg') no-repeat center center
+    fixed;
   background-size: cover;
 }
 
