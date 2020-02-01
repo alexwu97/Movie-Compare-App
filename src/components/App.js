@@ -155,6 +155,18 @@ class App extends React.Component {
           displayTwo={this.state.displayTwo}
           onRemount={this.onRemount}
         />
+
+        <div className="bottom right small-font ">
+          <span className="text-color-white mx2" style={{ opacity: 0.6 }}>
+            Credits: This product uses the TMDb API but is not endorsed or
+            certified by TMDb.
+          </span>
+          <img
+            src="/src/static/images/tmdb_logo.png"
+            style={{ width: 50 }}
+            alt=""
+          ></img>
+        </div>
       </section>
     );
   }

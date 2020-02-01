@@ -22,8 +22,8 @@
 }
 
 body {
-  background: url('/src/static/images/background.jpeg') no-repeat center center
-    fixed;
+  background: url('https://download.hipwallpaper.com/desktop/1600/900/80/29/ynuKj1.jpeg')
+    no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -53,14 +53,14 @@ h6 {
   -webkit-box-shadow: 5px 1px 7px 7px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 5px 1px 7px 7px rgba(50, 50, 50, 0.75);
   box-shadow: 5px 1px 7px 7px rgba(50, 50, 50, 0.75);
-  -webkit-transform: translate(15px, 15px);
-  transform: translate(15px, 15px);
+  -webkit-transform: translate(-15px, -15px);
+  transform: translate(-15px, -15px);
   transition: transform 0.75s, box-shadow 0.75s, ease;
 }
 
 .shift {
-  -webkit-transform: translate(15px, 15px);
-  transform: translate(15px, 15px);
+  -webkit-transform: translate(-15px, -15px);
+  transform: translate(-15px, -15px);
 }
 
 div {
@@ -69,4 +69,8 @@ div {
 
 span {
   font-size: 1.2em;
+}
+
+.small-font {
+  font-size: 0.7em;
 }
