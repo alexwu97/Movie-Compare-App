@@ -8,8 +8,9 @@
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
+    "PIC_URL": true,
     "API_URL": true,
-    "PIC_URL": true
+    "TMDB_KEY": true
   },
   "parserOptions": {
     "ecmaFeatures": {

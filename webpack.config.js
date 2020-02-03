@@ -40,7 +40,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       API_URL: JSON.stringify(process.env.API_URL),
-      PIC_URL: JSON.stringify(process.env.PIC_URL)
+      PIC_URL: JSON.stringify(process.env.PIC_URL),
+      TMDB_KEY: JSON.stringify(process.env.TMDB_KEY)
     })
   ]
 };

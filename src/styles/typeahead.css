@@ -13,22 +13,21 @@
   width: 100%;
 }
 
-.tt-suggestion {
+.tt-dataset {
   background-color: white;
-  padding: 3px 15px;
+
   font-size: 16px;
   line-height: 24px;
+}
+
+.tt-suggestion {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   border-left: 1px solid rgba(0, 0, 0, 0.2);
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
   animation: fadein ease-in 0.5s;
+  padding: 3px 15px;
 }
 
 .tt-suggestion.tt-cursor {
   color: #fff;
   background-color: #0097cf;
-}
-
-.hi {
-  background-color: black;
 }

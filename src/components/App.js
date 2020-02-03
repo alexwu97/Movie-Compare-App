@@ -14,13 +14,13 @@ class App extends React.Component {
     };
   }
 
+  //fetches movie data based off suggestion selected
   getInfo = item => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${item.id}?api_key=97c6d094b395cb9fa70c2328184d5e4f`
-    )
+    fetch(`${API_URL}movie/${item.id}?api_key=${TMDB_KEY}`)
       .then(res => res.json())
       .then(data => {
         this.setState(() => {
+          //decide whether to place data into display 1 or 2
           if (this.state.displayOne.selection) {
             return { movieInfoOne: data };
           } else {
@@ -30,6 +30,7 @@ class App extends React.Component {
       });
   };
 
+  //Set display 1 as main when display 2 is unmounted
   onRemount = () => {
     this.setState({
       displayOne: { no: '1', class: '.1', selection: true },
@@ -37,6 +38,7 @@ class App extends React.Component {
     });
   };
 
+  // switches the display to user selection
   onSelected = displayer => {
     if ((displayer.no === '1') & (displayer.selection === false)) {
       console.log(displayer);
@@ -72,8 +74,7 @@ class App extends React.Component {
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       remote: {
-        url:
-          'https://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=97c6d094b395cb9fa70c2328184d5e4f',
+        url: `${API_URL}search/movie?query=%QUERY&api_key=${TMDB_KEY}`,
         wildcard: '%QUERY', // %QUERY will be replace by users input in
 
         filter: function(movies) {
@@ -90,6 +91,7 @@ class App extends React.Component {
       }
     });
 
+    // Fetch movie data when select a suggestion
     $('#movieSearch').on('typeahead:selected', (evt, item) =>
       this.getInfo(item)
     );
@@ -109,7 +111,9 @@ class App extends React.Component {
         },
         templates: {
           notFound:
-            '<div>Not Found</div>' /* Rendered if 0 suggestions are available */,
+            '<div style="margin-left:15px; font-weight: bold; font-size: 16px">Not Found</div>' /* Rendered if 0 suggestions are available */,
+          pending:
+            '<i class="material-icons w3-spin" style="margin-left:5px; margin-top:5px;">refresh</i>',
           suggestion: function(datum) {
             var poster;
             if (datum.pic === null) {
@@ -119,7 +123,7 @@ class App extends React.Component {
               poster = PIC_URL + datum.pic;
             }
 
-            /* Used to render a single suggestion */
+            /* Render each suggestion to have their poster, name, and rating score */
             return (
               '<div class="flex">' +
               '<img class="my-auto" style="width: 40px;" src="' +
@@ -156,7 +160,7 @@ class App extends React.Component {
           onRemount={this.onRemount}
         />
 
-        <div className="bottom right small-font ">
+        <div className="bottom10 absolute right10 small-font ">
           <span className="text-color-white mx2" style={{ opacity: 0.6 }}>
             Credits: This product uses the TMDb API but is not endorsed or
             certified by TMDb.

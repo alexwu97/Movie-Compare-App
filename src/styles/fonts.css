@@ -1,2 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+div {
+  font-size: 15px;
+}
+
+span {
+  font-size: calc(5px + (16 - 5) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.small-font {
+  font-size: 0.7em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.4em 0px;
+  font-family: 'Oswald', sans-serif;
+}

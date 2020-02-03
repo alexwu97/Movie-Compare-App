@@ -1,0 +1,16 @@
+.text-color-blue {
+  color: #659dbd;
+  font-family: 'Anton';
+}
+
+.color-blue {
+  background-color: rgba(5, 22, 34, 0.95);
+}
+
+.text-color-white {
+  color: white;
+}
+
+.text-color-main {
+  color: #deb992;
+}

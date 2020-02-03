@@ -2,23 +2,23 @@
   cursor: pointer;
 }
 
-.color-blue {
-  background-color: rgba(5, 22, 34, 0.95);
-}
-
-.text-color-white {
-  color: white;
-}
-
-.text-color-main {
-  color: #deb992;
-}
-
 .shadow {
   text-shadow: 0 0 10px white;
 }
 
-.text-color-blue {
-  color: #659dbd;
-  font-family: 'Anton';
+.absolute {
+  position: absolute;
+}
+
+.w3-spin {
+  animation: w3-spin 2s infinite linear;
+}
+
+@keyframes w3-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
 }

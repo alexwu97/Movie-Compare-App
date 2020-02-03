@@ -12,10 +12,6 @@ class Display extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.setState = { information: null };
-  }
-
   render() {
     let movie = this.state.information;
 
@@ -101,7 +97,7 @@ class Display extends React.Component {
             <h3 className="h3 text-color-main mb0">Run Time: </h3>
             <span>{movie.runtime} min</span>
           </div>
-          <div className="bottom right">
+          <div className="bottom10 right10 absolute">
             <a className="text-color-white" href={movie.homepage}>
               {movie.homepage}
             </a>

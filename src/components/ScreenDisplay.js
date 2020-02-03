@@ -15,11 +15,12 @@ class ScreenDisplay extends React.Component {
     };
   }
 
+  //update styles on displays when selected
   highlight = (selected, deselect) => {
-    $(selected).removeClass('hovering');
-    $(selected).addClass('border-coloring shift');
     $(deselect).addClass('hovering');
     $(deselect).removeClass('border-coloring shift');
+    $(selected).removeClass('hovering');
+    $(selected).addClass('border-coloring shift');
   };
 
   render() {
