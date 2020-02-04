@@ -97,7 +97,7 @@ class Display extends React.Component {
             <h3 className="h3 text-color-main mb0">Run Time: </h3>
             <span>{movie.runtime} min</span>
           </div>
-          <div className="bottom10 right10 absolute">
+          <div className="bottom10 right10">
             <a className="text-color-white" href={movie.homepage}>
               {movie.homepage}
             </a>
