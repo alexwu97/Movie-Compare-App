@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './Search';
 import ScreenDisplay from './ScreenDisplay';
+import Footer from './Footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -149,8 +150,9 @@ class App extends React.Component {
   render() {
     return (
       <section>
-        <Search onToggled={this.tempFunc} toggle={this.state.toggle} />
+        <Search />
         <ScreenDisplay
+          
           infoOne={this.state.movieInfoOne}
           infoTwo={this.state.movieInfoTwo}
           toggle={this.state.toggle}
@@ -160,17 +162,7 @@ class App extends React.Component {
           onRemount={this.onRemount}
         />
 
-        <div className="bottom10 absolute right10 small-font ">
-          <span className="text-color-white mx2" style={{ opacity: 0.6 }}>
-            Credits: This product uses the TMDb API but is not endorsed or
-            certified by TMDb.
-          </span>
-          <img
-            src="/src/static/images/tmdb_logo.png"
-            style={{ width: 50 }}
-            alt=""
-          ></img>
-        </div>
+        <Footer onToggled={this.tempFunc} toggle={this.state.toggle} />
       </section>
     );
   }

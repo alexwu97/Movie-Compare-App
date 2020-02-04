@@ -1,12 +1,17 @@
-.tt-input, /* UPDATE: newer versions use tt-input instead of tt-query */
+.tt-input,
 .tt-hint {
-  width: 400px;
-  height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 45px;
   padding: 8px 12px;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 20px;
+
   border: 2px solid #ccc;
   outline: none;
+}
+
+.twitter-typeahead {
+  width: 100%;
 }
 
 .tt-menu {

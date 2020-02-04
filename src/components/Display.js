@@ -47,7 +47,7 @@ class Display extends React.Component {
 
     return (
       <div
-        className="flex color-blue h100"
+        className="flex h100"
         onClick={() => {
           this.props.onSelected(this.props.display);
         }}
@@ -60,7 +60,7 @@ class Display extends React.Component {
           ></img>
         </div>
 
-        <div className="px20 width100">
+        <div className="px20 width100 color-blue">
           <h2 className="h2 text-color-main mb0">{movie.title}</h2>
           <p className="mb2">{movie.overview}</p>
 
