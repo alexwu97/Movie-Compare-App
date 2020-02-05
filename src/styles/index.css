@@ -8,6 +8,7 @@
 @import './toggleSwitch';
 @import './spacing';
 @import './colors';
+@import './screenDisplay.css';
 
 :root {
   --h2: 50px;

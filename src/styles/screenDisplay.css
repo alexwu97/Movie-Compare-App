@@ -1,0 +1,12 @@
+.screen-display-container {
+  display: flex;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.screen-display-item {
+  width: 747.89px;
+  margin-bottom: 50px;
+}
