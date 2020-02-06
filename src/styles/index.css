@@ -8,11 +8,12 @@
 @import './toggleSwitch';
 @import './spacing';
 @import './colors';
+@import './screenDisplay.css';
 
 :root {
   --h2: 50px;
   --h1: 70px;
-  --h3: calc(5px + (25 - 5) * ((100vw - 300px) / (1600 - 300)));
+  --h3: 25px;
   --black: #222;
   --dark-gray: #18181e;
 }
@@ -36,7 +37,7 @@ body {
   );
   background-attachment: fixed;
   margin: 0;
-  height: 100vh;
+  overflow: auto;
 }
 
 .hovering:hover {

@@ -6,8 +6,18 @@
   text-shadow: 0 0 10px white;
 }
 
-.absolute {
+.bottom10 {
   position: absolute;
+  bottom: 10px;
+}
+
+.scroller {
+  height: 200px;
+  overflow: auto;
+}
+
+.right10 {
+  right: 10px;
 }
 
 .w3-spin {
@@ -21,4 +31,24 @@
   100% {
     transform: rotate(359deg);
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(5, 22, 34, 0.8);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #444;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
 }

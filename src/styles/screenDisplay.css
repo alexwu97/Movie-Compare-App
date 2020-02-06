@@ -1,0 +1,19 @@
+.screen-display-container {
+  display: flex;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.screen-display-item {
+  width: 45%;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 1613px) {
+  .screen-display-item {
+    width: 60%;
+    margin-bottom: 25px;
+  }
+}

@@ -60,9 +60,9 @@ class Display extends React.Component {
           ></img>
         </div>
 
-        <div className="px20 width100 color-blue">
+        <div className="px20 width100 color-blue relative">
           <h2 className="h2 text-color-main mb0">{movie.title}</h2>
-          <p className="mb2">{movie.overview}</p>
+          <p className="mb2 scroller">{movie.overview}</p>
 
           <div>
             <h3 className="h3 text-color-main inline">Genre: </h3>
@@ -97,7 +97,7 @@ class Display extends React.Component {
             <h3 className="h3 text-color-main mb0">Run Time: </h3>
             <span>{movie.runtime} min</span>
           </div>
-          <div className="bottom10 right10">
+          <div className="bottom10 absolute right10">
             <a className="text-color-white" href={movie.homepage}>
               {movie.homepage}
             </a>

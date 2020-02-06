@@ -26,9 +26,9 @@ class ScreenDisplay extends React.Component {
   render() {
     if (this.state.toggle === 'on') {
       return (
-        <div className="flex margin10">
+        <div className="screen-display-container margin10">
           <div
-            className="py0 relative width45 mx-auto 1 border-coloring text-color-white"
+            className="screen-display-item mx-auto 1 text-color-white border-coloring"
             onClick={() => {
               this.highlight(
                 this.props.displayOne.class,
@@ -44,7 +44,7 @@ class ScreenDisplay extends React.Component {
             />
           </div>
           <div
-            className="py0 relative width45 mx-auto 2 hovering text-color-white"
+            className="screen-display-item mx-auto 2 hovering text-color-white"
             onClick={() => {
               this.highlight(
                 this.props.displayTwo.class,
