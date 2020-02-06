@@ -7,6 +7,13 @@
 }
 
 .screen-display-item {
-  width: 747.89px;
+  width: 45%;
   margin-bottom: 50px;
+}
+
+@media (max-width: 1613px) {
+  .screen-display-item {
+    width: 60%;
+    margin-bottom: 25px;
+  }
 }
