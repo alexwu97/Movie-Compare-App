@@ -34,13 +34,13 @@
 }
 
 /* width */
-::-webkit-scrollbar {
+.scroller::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(5, 22, 34, 0.8);
+  background: rgba(5, 22, 34, 0.95);
 }
 
 /* Handle */

@@ -6,14 +6,38 @@
   flex-direction: row;
 }
 
+.display-container {
+  display: flex;
+  height: 600px;
+}
 .screen-display-item {
   width: 45%;
   margin-bottom: 50px;
 }
 
+.display-item {
+  width: 100%;
+}
+
 @media (max-width: 1613px) {
   .screen-display-item {
-    width: 60%;
-    margin-bottom: 25px;
+    width: 80%;
+  }
+}
+
+@media (max-width: 950px) {
+  .screen-display-item {
+    width: 400px;
+  }
+  .display-container {
+    height: auto;
+    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .display-item {
+    width: 400px;
   }
 }
