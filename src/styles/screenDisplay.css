@@ -15,12 +15,24 @@
   margin-bottom: 50px;
 }
 
+.screen-display-single {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
 .display-item {
   width: 100%;
 }
 
+.no-movie-display {
+  height: 600px;
+}
+
 @media (max-width: 1613px) {
   .screen-display-item {
+    width: 80%;
+  }
+  .screen-display-single {
     width: 80%;
   }
 }
@@ -29,6 +41,15 @@
   .screen-display-item {
     width: 400px;
   }
+
+  .screen-display-single {
+    width: 400px;
+  }
+
+  .no-movie-display {
+    height: 1160px;
+  }
+
   .display-container {
     height: auto;
     justify-content: space-between;

@@ -24,8 +24,7 @@ class Display extends React.Component {
     if (!movie) {
       return (
         <div
-          className="color-blue mx-auto"
-          style={{ height: 600 }}
+          className="color-blue mx-auto no-movie-display"
           onClick={() => {
             this.props.onSelected(this.props.display);
           }}
