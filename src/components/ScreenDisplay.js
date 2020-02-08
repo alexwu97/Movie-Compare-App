@@ -64,7 +64,7 @@ class ScreenDisplay extends React.Component {
       );
     } else {
       return (
-        <div className="py0 width50 margin10 mx-auto text-color-white">
+        <div className="screen-display-single py0 margin10 mx-auto text-color-white">
           <Display
             information={this.state.movieInfoOne}
             onSelected={this.props.onSelected}
