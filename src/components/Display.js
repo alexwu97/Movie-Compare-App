@@ -47,12 +47,12 @@ class Display extends React.Component {
 
     return (
       <div
-        className="flex h100"
+        className="display-container"
         onClick={() => {
           this.props.onSelected(this.props.display);
         }}
       >
-        <div className="inline-block">
+        <div className="h600">
           <img
             className="h100 width400"
             src={PIC_URL + movie.poster_path}
@@ -60,7 +60,7 @@ class Display extends React.Component {
           ></img>
         </div>
 
-        <div className="px20 width100 color-blue relative">
+        <div className="px20 color-blue relative display-item">
           <h2 className="h2 text-color-main mb0">{movie.title}</h2>
           <p className="mb2 scroller">{movie.overview}</p>
 
