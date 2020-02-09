@@ -11,7 +11,7 @@ const Footer = ({ onToggled, toggle }) => {
   return (
     <div>
       <div className="flex toggler">
-        <div className="mt2 mx2 compare text-color-blue">
+        <div className="mt2 mr2 compare text-color-blue">
           Compare Two Movies
         </div>
         <label className="switch mt1">
@@ -24,13 +24,14 @@ const Footer = ({ onToggled, toggle }) => {
           ></span>
         </label>
       </div>
-      <div className=" credits small-font ">
+      <div className="credits small-font ">
         <span className="text-color-white mx2" style={{ opacity: 0.6 }}>
           Credits: This product uses the TMDb API but is not endorsed or
           certified by TMDb.
         </span>
         <img
-          src="/src/static/images/tmdb_logo.png"
+          className="logo"
+          src="https://www.themoviedb.org/assets/2/v4/logos/312x276-primary-green-74212f6247252a023be0f02a5a45794925c3689117da9d20ffe47742a665c518.png"
           style={{ width: 50 }}
           alt=""
         ></img>

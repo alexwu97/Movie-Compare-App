@@ -130,7 +130,7 @@ class App extends React.Component {
               '<img class="my-auto" style="width: 40px;" src="' +
               poster +
               '"></img>' +
-              '<div style="margin-left: 15px;">' +
+              '<div class="mb0" style="margin-left: 15px;">' +
               '<div style="width:340px;">' +
               datum.value +
               '</div>' +
@@ -151,16 +151,17 @@ class App extends React.Component {
     return (
       <section>
         <Search />
-        <ScreenDisplay
-          
-          infoOne={this.state.movieInfoOne}
-          infoTwo={this.state.movieInfoTwo}
-          toggle={this.state.toggle}
-          onSelected={this.onSelected}
-          displayOne={this.state.displayOne}
-          displayTwo={this.state.displayTwo}
-          onRemount={this.onRemount}
-        />
+        <div className="margin10">
+          <ScreenDisplay
+            infoOne={this.state.movieInfoOne}
+            infoTwo={this.state.movieInfoTwo}
+            toggle={this.state.toggle}
+            onSelected={this.onSelected}
+            displayOne={this.state.displayOne}
+            displayTwo={this.state.displayTwo}
+            onRemount={this.onRemount}
+          />
+        </div>
 
         <Footer onToggled={this.tempFunc} toggle={this.state.toggle} />
       </section>

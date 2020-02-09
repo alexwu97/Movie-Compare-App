@@ -52,11 +52,24 @@
 }
 
 .credits {
-  float: right;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.toggler {
+  margin-left: auto;
+  margin-right: auto;
+  width: 205px;
+}
+
+.logo {
+  vertical-align: middle;
 }
 
 .margin10 {
-  margin-bottom: 200px;
+  margin-bottom: 50px;
 }
 
 .searchinput {
@@ -64,13 +77,6 @@
   margin-left: auto;
   margin-right: auto;
   width: 614px;
-}
-
-.toggler {
-  position: fixed;
-  left: 20px;
-  bottom: 30px;
-  z-index: 1;
 }
 
 @media (max-width: 768px) {

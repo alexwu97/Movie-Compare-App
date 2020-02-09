@@ -92,7 +92,7 @@ class Display extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="mb3">
             <h3 className="h3 text-color-main mb0">Run Time: </h3>
             <span>{movie.runtime} min</span>
           </div>

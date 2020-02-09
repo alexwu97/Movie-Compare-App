@@ -26,7 +26,7 @@ class ScreenDisplay extends React.Component {
   render() {
     if (this.state.toggle === 'on') {
       return (
-        <div className="screen-display-container margin10">
+        <div className="screen-display-container">
           <div
             className="screen-display-item mx-auto 1 text-color-white border-coloring"
             onClick={() => {
@@ -64,7 +64,7 @@ class ScreenDisplay extends React.Component {
       );
     } else {
       return (
-        <div className="screen-display-single py0 margin10 mx-auto text-color-white">
+        <div className="screen-display-single mx-auto text-color-white">
           <Display
             information={this.state.movieInfoOne}
             onSelected={this.props.onSelected}
