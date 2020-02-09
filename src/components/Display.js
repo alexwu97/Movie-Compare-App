@@ -1,26 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Display extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { information: null };
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    return {
-      information: props.information
+    this.state = {
+      formatter: new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+      })
     };
   }
 
   render() {
-    let movie = this.state.information;
+    const movie = this.props.information;
+    var releaseDate = 'N/A';
+    var score = 'N/A';
+    var revenue = 'N/A';
+    var budget = 'N/A';
+    var runtime = 'N/A';
 
-    const formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 2
-    });
-
+    //zero condition
     if (!movie) {
       return (
         <div
@@ -34,14 +35,24 @@ class Display extends React.Component {
       );
     }
 
-    let revenue = 'N/A';
-    let budget = 'N/A';
-    if ((movie.revenue != undefined) & (movie.revenue != 0)) {
-      revenue = formatter.format(movie.revenue);
-    }
+    {
+      //adjust accordingly if parameters are available
+      if ((movie.runtime != undefined) & (movie.runtime != 0)) {
+        runtime = movie.runtime + ' min';
+      }
+      if (movie.release_date != undefined) {
+        releaseDate = movie.release_date;
+      }
+      if ((movie.vote_average != undefined) & (movie.vote_average != 0)) {
+        score = movie.vote_average + '/10';
+      }
+      if ((movie.revenue != undefined) & (movie.revenue != 0)) {
+        revenue = this.state.formatter.format(movie.revenue);
+      }
 
-    if ((movie.budget != undefined) & (movie.budget != 0)) {
-      budget = formatter.format(movie.budget);
+      if ((movie.budget != undefined) & (movie.budget != 0)) {
+        budget = this.state.formatter.format(movie.budget);
+      }
     }
 
     return (
@@ -52,11 +63,7 @@ class Display extends React.Component {
         }}
       >
         <div className="h600">
-          <img
-            className="h100 width400"
-            src={PIC_URL + movie.poster_path}
-            alt=""
-          ></img>
+          <img className="h100" src={PIC_URL + movie.poster_path} alt=""></img>
         </div>
 
         <div className="px20 color-blue relative display-item">
@@ -74,11 +81,11 @@ class Display extends React.Component {
           <div className="flex">
             <div className="width50">
               <h3 className="h3 text-color-main mb0">Release Date: </h3>
-              <span>{movie.release_date}</span>
+              <span>{releaseDate}</span>
             </div>
             <div className="width50">
               <h3 className="h3 text-color-main mb0">Score: </h3>
-              <span>{movie.vote_average}/10</span>
+              <span>{score}</span>
             </div>
           </div>
           <div className="flex">
@@ -92,11 +99,11 @@ class Display extends React.Component {
             </div>
           </div>
 
-          <div className="mb3">
+          <div className="mb4">
             <h3 className="h3 text-color-main mb0">Run Time: </h3>
-            <span>{movie.runtime} min</span>
+            <span>{runtime}</span>
           </div>
-          <div className="bottom10 absolute right10">
+          <div className="link">
             <a className="text-color-white" href={movie.homepage}>
               {movie.homepage}
             </a>
@@ -112,5 +119,13 @@ class Display extends React.Component {
     }
   }
 }
+
+Display.propTypes = {
+  information: PropTypes.object,
+  display: PropTypes.object,
+  toggle: PropTypes.string,
+  onRemount: PropTypes.func,
+  onSelected: PropTypes.func
+};
 
 export default Display;

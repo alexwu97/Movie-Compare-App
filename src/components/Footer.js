@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Footer = ({ onToggled, toggle }) => {
   if (toggle === 'on') {
@@ -38,6 +39,11 @@ const Footer = ({ onToggled, toggle }) => {
       </div>
     </div>
   );
+};
+
+Footer.propTypes = {
+  toggle: PropTypes.string,
+  onToggled: PropTypes.func
 };
 
 export default Footer;

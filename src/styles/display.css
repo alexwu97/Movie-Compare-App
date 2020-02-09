@@ -6,10 +6,6 @@
   flex-direction: row;
 }
 
-.display-container {
-  display: flex;
-  height: 600px;
-}
 .screen-display-item {
   width: 45%;
   margin-bottom: 40px;
@@ -18,6 +14,11 @@
 .screen-display-single {
   width: 50%;
   margin-bottom: 90px;
+}
+
+.display-container {
+  display: flex;
+  height: 600px;
 }
 
 .display-item {

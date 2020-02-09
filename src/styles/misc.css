@@ -1,0 +1,65 @@
+.link {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding-left: 10px;
+}
+
+.w3-spin {
+  animation: w3-spin 2s infinite linear;
+}
+
+@keyframes w3-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.credits {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.toggler {
+  margin-left: auto;
+  margin-right: auto;
+  width: 205px;
+}
+
+.logo {
+  vertical-align: middle;
+}
+
+.scroller {
+  max-height: 200px;
+  overflow: auto;
+}
+
+/* width */
+.scroller::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.scroller::-webkit-scrollbar-track {
+  background: rgba(5, 22, 34, 0.95);
+}
+
+/* Handle */
+.scroller::-webkit-scrollbar-thumb {
+  background: #444;
+}
+
+/* Handle on hover */
+.scroller::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.aligner {
+  text-align: center;
+}
