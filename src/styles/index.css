@@ -24,7 +24,7 @@
 }
 
 body {  
-  background: url('/dist/static/images/background.jpeg')
+  background: url('./dist/static/images/background.jpeg')
     no-repeat center center fixed;
   background-size: cover;
 }
