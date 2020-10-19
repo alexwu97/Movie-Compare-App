@@ -20,6 +20,7 @@ class Display extends React.Component {
     var revenue = 'N/A';
     var budget = 'N/A';
     var runtime = 'N/A';
+    var posterURL = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSols5HZxlQWyS9JY5d3_L9imbk0LiziHiyDtMZLHt_UNzoYUXs2g';
 
     //zero condition
     if (!movie) {
@@ -53,6 +54,10 @@ class Display extends React.Component {
       if ((movie.budget != undefined) & (movie.budget != 0)) {
         budget = this.state.formatter.format(movie.budget);
       }
+      
+      if(movie.poster_path !== null){
+        posterURL = PIC_URL + movie.poster_path;
+      }
     }
 
     return (
@@ -62,7 +67,7 @@ class Display extends React.Component {
           this.props.onSelected(this.props.display);
         }}
       >
-        <img className="image-display" src={PIC_URL + movie.poster_path} alt=""></img>
+        <img className="image-display" src={posterURL} alt=""></img>
 
         <div className="px20 color-blue relative display-item">
           <h2 className="h2 text-color-main mb0">{movie.title}</h2>
