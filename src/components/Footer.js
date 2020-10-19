@@ -32,7 +32,7 @@ const Footer = ({ onToggled, toggle }) => {
         </span>
         <img
           className="logo"
-          src="src/static/images/tmdb_logo.png"
+          src="static/images/tmdb_logo.png"
           style={{ width: 50 }}
           alt=""
         ></img>
