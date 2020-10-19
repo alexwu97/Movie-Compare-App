@@ -1,7 +1,7 @@
 .border-coloring {
-  -webkit-box-shadow: 5px 1px 7px 7px rgba(253, 238, 48, 0.75);
-  -moz-box-shadow: 5px 1px 7px 7px rgba(253, 238, 48, 0.75);
-  box-shadow: 5px 1px 7px 7px rgba(253, 238, 48, 0.75);
+  -webkit-box-shadow: 3px 3px 3px 3px rgba(253, 238, 48, 0.75);
+  -moz-box-shadow: 3px 3px 3px 3pxrgba(253, 238, 48, 0.75);
+  box-shadow: 3px 3px 3px 3px rgba(253, 238, 48, 0.75);
 }
 
 .hovering{
