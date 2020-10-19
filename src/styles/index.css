@@ -23,8 +23,8 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-body {
-  background: url('/src/static/images/background.jpeg')
+body {  
+  background: url('/dist/static/images/background.jpeg')
     no-repeat center center fixed;
   background-size: cover;
 }
