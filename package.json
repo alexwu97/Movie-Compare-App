@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "homepage": "http://alexmovie.netlify.app/",
+  "homepage": ".",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server",
     "build": "./node_modules/.bin/webpack",
