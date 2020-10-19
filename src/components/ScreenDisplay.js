@@ -10,9 +10,9 @@ class ScreenDisplay extends React.Component {
   //add boarder and shadows on displays when selected or hovered
   highlight = (selected, deselect) => {
     $(deselect).addClass('hovering');
-    $(deselect).removeClass('border-coloring shift');
+    $(deselect).removeClass('border-coloring');
     $(selected).removeClass('hovering');
-    $(selected).addClass('border-coloring shift');
+    $(selected).addClass('border-coloring');
   };
 
   render() {

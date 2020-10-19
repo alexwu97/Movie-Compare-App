@@ -62,9 +62,7 @@ class Display extends React.Component {
           this.props.onSelected(this.props.display);
         }}
       >
-        <div className="h600">
-          <img className="h100" src={PIC_URL + movie.poster_path} alt=""></img>
-        </div>
+        <img className="image-display" src={PIC_URL + movie.poster_path} alt=""></img>
 
         <div className="px20 color-blue relative display-item">
           <h2 className="h2 text-color-main mb0">{movie.title}</h2>
@@ -78,22 +76,22 @@ class Display extends React.Component {
               </span>
             ))}
           </div>
-          <div className="flex">
-            <div className="width50">
+          <div className="category-container">
+            <div className="category">
               <h3 className="h3 text-color-main mb0">Release Date: </h3>
               <span>{releaseDate}</span>
             </div>
-            <div className="width50">
+            <div className="category">
               <h3 className="h3 text-color-main mb0">Score: </h3>
               <span>{score}</span>
             </div>
           </div>
-          <div className="flex">
-            <div className="width50">
+          <div className="category-container">
+            <div className="category">
               <h3 className="h3 text-color-main mb0">Box Office: </h3>
               <span>{revenue}</span>
             </div>
-            <div className="width50">
+            <div className="category">
               <h3 className="h3 text-color-main mb0">Movie Budget: </h3>
               <span>{budget}</span>
             </div>
@@ -103,8 +101,8 @@ class Display extends React.Component {
             <h3 className="h3 text-color-main mb0">Run Time: </h3>
             <span>{runtime}</span>
           </div>
-          <div className="link">
-            <a className="text-color-white" href={movie.homepage}>
+          <div className="link-container">
+            <a className="text-color-white website-link" href={movie.homepage}>
               {movie.homepage}
             </a>
           </div>

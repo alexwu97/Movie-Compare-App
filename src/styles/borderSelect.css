@@ -4,6 +4,10 @@
   box-shadow: 5px 1px 7px 7px rgba(253, 238, 48, 0.75);
 }
 
+.hovering{
+  transition: transform 0.75s, box-shadow 0.75s, ease;
+}
+
 .hovering:hover {
   cursor: pointer;
   -webkit-box-shadow: 5px 1px 7px 7px rgba(50, 50, 50, 0.75);
