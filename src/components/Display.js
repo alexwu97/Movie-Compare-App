@@ -15,6 +15,7 @@ class Display extends React.Component {
 
   render() {
     const movie = this.props.information;
+    //displaying variables used by renderer
     var releaseDate = 'N/A';
     var score = 'N/A';
     var revenue = 'N/A';
@@ -25,19 +26,14 @@ class Display extends React.Component {
     //zero condition
     if (!movie) {
       return (
-        <div
-          className="color-blue mx-auto no-movie-display"
-          onClick={() => {
-            this.props.onSelected(this.props.display);
-          }}
-        >
+        <div className="color-blue mx-auto no-movie-display">
           <div className="aligner py4 text-color-blue">Search a Movie!</div>
         </div>
       );
     }
 
     {
-      //adjust accordingly if parameters are available
+      //if props are available, update displaying values to the props' values
       if ((movie.runtime != undefined) & (movie.runtime != 0)) {
         runtime = movie.runtime + ' min';
       }
@@ -61,15 +57,10 @@ class Display extends React.Component {
     }
 
     return (
-      <div
-        className="display-container"
-        onClick={() => {
-          this.props.onSelected(this.props.display);
-        }}
-      >
+      <div className="display">
         <img className="image-display" src={posterURL} alt=""></img>
 
-        <div className="px20 color-blue relative display-item">
+        <div className="px20 color-blue relative info-displayer">
           <h2 className="h2 text-color-main mb0">{movie.title}</h2>
           <p className="mb2 scroller">{movie.overview}</p>
 
@@ -117,7 +108,7 @@ class Display extends React.Component {
   }
 
   componentWillUnmount() {
-    if (this.props.display.no === '2') {
+    if (this.props.display.displayID === '2') {
       this.props.onRemount();
     }
   }
@@ -126,9 +117,7 @@ class Display extends React.Component {
 Display.propTypes = {
   information: PropTypes.object,
   display: PropTypes.object,
-  toggle: PropTypes.string,
   onRemount: PropTypes.func,
-  onSelected: PropTypes.func
 };
 
 export default Display;

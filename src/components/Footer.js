@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Footer = ({ onToggled, toggle }) => {
-  if (toggle === 'on') {
-    console.log(toggle);
+const Footer = ({ switchDisplayModes, showTwoDisplays }) => {
+  if (showTwoDisplays === 'on') {
     $('.compare').addClass('shadow');
   } else {
-    console.log(toggle);
     $('.compare').removeClass('shadow');
   }
   return (
@@ -20,7 +18,7 @@ const Footer = ({ onToggled, toggle }) => {
           <span
             className="slider round"
             onClick={() => {
-              onToggled();
+              switchDisplayModes();
             }}
           ></span>
         </label>
@@ -42,8 +40,8 @@ const Footer = ({ onToggled, toggle }) => {
 };
 
 Footer.propTypes = {
-  toggle: PropTypes.string,
-  onToggled: PropTypes.func
+  showTwoDisplays: PropTypes.string,
+  switchDisplayModes: PropTypes.func
 };
 
 export default Footer;

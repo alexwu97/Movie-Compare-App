@@ -1,4 +1,4 @@
-.screen-display-container {
+.display-container {
   display: flex;
   justify-content: space-between;
   -webkit-flex-wrap: wrap;
@@ -18,26 +18,22 @@
   width: 400px;
 }
 
-.image-container{
-  width: 400px;
-}
-
-.screen-display-item {
+.display-item {
   width: 45%;
   margin-bottom: 40px;
 }
 
-.screen-display-single {
+.display-single {
   width: 50%;
   margin-bottom: 90px;
 }
 
-.display-container {
+.display {
   display: flex;
   height: 600px;
 }
 
-.display-item {
+.info-displayer {
   width: 100%;
 }
 
@@ -46,25 +42,25 @@
 }
 
 @media (max-width: 1613px) {
-  .screen-display-item {
+  .display-item {
     width: 80%;
     height: 100%;
   }
-  .screen-display-single {
+  .display-single {
     width: 80%;
   }
 }
 
 @media (max-width: 950px) {
-  .screen-display-item {
+  .display-item {
     width: 400px;
   }
 
-  .screen-display-single {
+  .display-single {
     width: 400px;
   }
 
-  .display-container {
+  .display {
     height: auto;
     justify-content: space-between;
     -webkit-flex-wrap: wrap;
@@ -72,20 +68,20 @@
     flex-direction: row;
   }
 
-  .display-item {
+  .info-displayer {
     width: 400px;
   }
 }
 
 @media (max-width: 882px) {
-  .screen-display-item {
+  .display-item {
     margin-left: auto;
     margin-right: auto;
   }
 }
 
 @media (max-width: 440px) {
-  .display-container{
+  .display{
     height: auto;
   }
 
@@ -94,11 +90,11 @@
     height: auto;
   }
 
-  .screen-display-single {
+  .display-single {
     width: 90%;
   }
 
-  .screen-display-item {
+  .display-item {
     width: 90%;
   }
 }
